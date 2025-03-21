@@ -16,6 +16,6 @@ export const AxiosProvider = (
     if (props.useGlobalAxios) {
       prepareAxiosInstance(axios, props)
     }
-  }, [props.useGlobalAxios]);
+  }, [props]);
   return <AxiosContext.Provider value={props} children={children}/>
 }

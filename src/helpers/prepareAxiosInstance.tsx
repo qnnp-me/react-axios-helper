@@ -7,6 +7,7 @@ export const prepareAxiosInstance = (instance: AxiosInstance, context: AxiosCont
     ...instance.defaults,
     ...omitObj(context, [
       'axiosInstance',
+      'useGlobalAxios',
       'responseInterceptors',
       'requestInterceptors'
     ]),

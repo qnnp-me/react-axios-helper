@@ -1,9 +1,9 @@
-import {AxiosError, AxiosInstance} from "axios";
-import {omitObj} from "./omitObj.tsx";
+import {AxiosDefaults, AxiosError, AxiosInstance} from "axios";
 import {AxiosContextType} from "../types/AxiosContextType.tsx";
+import {omitObj} from "./omitObj.tsx";
 
 export const prepareAxiosInstance = (instance: AxiosInstance, context: AxiosContextType) => {
-  instance.defaults = {
+  const defaults = {
     ...instance.defaults,
     ...omitObj(context, [
       'axiosInstance',
@@ -11,6 +11,9 @@ export const prepareAxiosInstance = (instance: AxiosInstance, context: AxiosCont
       'responseInterceptors',
       'requestInterceptors'
     ]),
+  }
+  for (const key in defaults) {
+    instance.defaults[key as keyof AxiosDefaults] = defaults[key as keyof AxiosDefaults]
   }
   instance.interceptors.request.use(
     context.requestInterceptors?.onFulfilled,

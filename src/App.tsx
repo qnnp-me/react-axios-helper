@@ -1,12 +1,15 @@
-import { AxiosProvider } from "."
+import {useAxios} from "./hooks/useAxios.ts";
+import {useEffect} from "react";
 
 function App() {
+  const {get} = useAxios()
+  useEffect(() => {
+    get('/asd')
+  }, []);
   return (
-    <AxiosProvider>
-      <div>
+    <div>
 
-      </div>
-    </AxiosProvider>
+    </div>
   )
 }
 

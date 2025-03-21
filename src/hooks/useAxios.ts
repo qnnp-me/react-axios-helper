@@ -1,7 +1,7 @@
 import {useContext, useEffect, useMemo, useState} from "react";
 import axios from "axios";
-import {abortReason, prepareAxiosInstance} from "../helpers/prepareAxiosInstance.tsx";
-import {AxiosContext} from "../components/AxiosContext.tsx";
+import {abortReason, prepareAxiosInstance} from "../helpers/prepareAxiosInstance";
+import {AxiosContext} from "../components/AxiosContext";
 
 export const useAxios = () => {
   const context = useContext(AxiosContext)

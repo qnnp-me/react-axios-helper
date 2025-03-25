@@ -15,11 +15,13 @@ export const prepareAxiosInstance = (instance: AxiosInstance, context: AxiosCont
   for (const key in defaults) {
     instance.defaults[key as keyof AxiosDefaults] = defaults[key as keyof AxiosDefaults]
   }
+  instance.interceptors.request.clear()
   instance.interceptors.request.use(
     context.requestInterceptors?.onFulfilled,
     context.requestInterceptors?.onRejected,
     context.requestInterceptors?.options
   )
+  instance.interceptors.response.clear()
   instance.interceptors.response.use(
     context.responseInterceptors?.onFulfilled,
     (error: AxiosError) => {

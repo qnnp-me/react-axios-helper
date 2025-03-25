@@ -1,8 +1,8 @@
 import {ReactNode, useEffect} from "react";
-import {prepareAxiosInstance} from "../helpers/prepareAxiosInstance.tsx";
+import {prepareAxiosInstance} from "../helpers/prepareAxiosInstance";
 import axios from "axios";
-import {AxiosContext} from "./AxiosContext.tsx";
-import {AxiosContextType} from "../types/AxiosContextType.tsx";
+import {AxiosContext} from "./AxiosContext";
+import {AxiosContextType} from "../types/AxiosContextType";
 
 export const AxiosProvider = (
   {

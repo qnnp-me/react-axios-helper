@@ -1,4 +1,4 @@
 export * from './hooks/useAxios.ts'
 export * from './components/AxiosProvider'
 export * from './components/AxiosContext'
-export {abortReason} from './helpers/prepareAxiosInstance.tsx'
+export {abortReason} from './helpers/prepareAxiosInstance'

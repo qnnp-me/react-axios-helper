@@ -1,10 +1,10 @@
 import {createRoot} from 'react-dom/client'
 import App from './App.tsx'
-import {abortReason, AxiosProvider} from './index.ts';
+import {abortReason, AxiosProvider } from './index.ts'
 
 createRoot(document.getElementById('root')!).render(
   <AxiosProvider
-    baseURL={'http://localhost:3000/'}
+    baseURL={'/'}
     responseInterceptors={{
       onFulfilled: (response) => {
         console.log('response', response)

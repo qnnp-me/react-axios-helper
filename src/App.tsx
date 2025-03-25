@@ -1,14 +1,19 @@
-import {useAxios} from "./hooks/useAxios.ts";
+import {useAxios} from "./hooks/useAxios";
 import {useEffect} from "react";
 
 function App() {
-  const {get} = useAxios()
+  const axios = useAxios()
+  const handle = () => {
+    axios.get('/asd').then(e => {
+      console.log(e)
+    })
+  }
   useEffect(() => {
-    get('/asd')
+    handle()
   }, []);
   return (
     <div>
-
+      <button onClick={handle}>Test</button>
     </div>
   )
 }

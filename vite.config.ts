@@ -27,5 +27,8 @@ export default defineConfig({
         globals: {},
       },
     },
+  },
+  esbuild: {
+    pure: ['console.log', 'console.info', 'console.warn']
   }
 })

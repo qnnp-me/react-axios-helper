@@ -7,7 +7,7 @@ import {
   InternalAxiosRequestConfig
 } from "axios";
 
-export type AxiosContextType = AxiosRequestConfig
+export type AxiosContextType = Omit<AxiosRequestConfig, 'signal'>
   & {
   axiosInstance?: AxiosInstance
   /**

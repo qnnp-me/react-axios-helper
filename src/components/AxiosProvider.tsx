@@ -10,10 +10,10 @@ export const AxiosProvider = (
     ...props
   }: {
     children: ReactNode
-  } & Omit<AxiosContextType, 'axiosInstance' | 'signal'>
+  } & Omit<AxiosContextType, 'axiosInstance'>
 ) => {
   useEffect(() => {
-    if (props.useGlobalAxios) {
+    if (props.useGlobalAxios !== false) {
       prepareAxiosInstance(axios, props)
     }
   }, [props]);
